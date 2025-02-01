@@ -2,21 +2,17 @@
 
 # How to build
 ~~~
-$ mkdir buid
+$ mkdir build
 $ cd build
 $ cmake ..
 $ make
 ~~~
 # How to use
 ~~~
-$ ./echo_sample &
-$ echo "0" > /tmp/command
-1: 0
-$ echo "50" > /tmp/command
-2: 50
-$ echo "100" > /tmp/command
-3: 100
-$ echo "end" > /tmp/command
-4: end
-[1]+  Done                    ./echo_sample
+$ ./echo_sample /tmp/haltp-command &
+$ echo "dtv-tuneup /tmp/haltp/dtv/channel" > /tmp/haltp-command
+$ cat /tmp/haltp/dtv/channel 
+$ echo "quit" > /tmp/haltp-command
+[1]+  Done                    ./echo_sample /tmp/haltp-command
+$ killall echo_sample
 ~~~
